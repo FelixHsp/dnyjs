@@ -1,0 +1,18 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class="imgWrapper">
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="add">
+  <view class="xueshuAdd" bindtap="goXueshu">
+    <image src="../../images/lunwen.png" class="addImg"></image>
+    <view class="text">添加学术论文</view>
+  </view>
+  <view class="jingsaiAdd">
+  <image src="../../images/jingsai.png" class="addImg"></image>
+    <view class="text">添加科研成果</view>
+  </view>
+</view>

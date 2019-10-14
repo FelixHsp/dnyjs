@@ -1,0 +1,30 @@
+<view id="addType">
+  <view id="addTypeTitle"><text style="color:red">*</text>论文类别：</view>
+  <picker class="addpicker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+    <image class="gengduo" src="../../images/xia.png"></image>
+  </picker>
+</view>
+<view class="addTitle">
+  <view class="title"><text style="color:red">*</text>文章名称：</view>
+  <input class="input" placeholder="请输入文章名称" bindinput="titleInput"></input>
+</view>
+<view class="addTitle">
+  <view class="title"><text style="color:red">*</text>期刊名称：</view>
+  <input class="input" placeholder="请输入期刊名称" bindinput="titleInput"></input>
+</view>
+<view class="addTitle">
+  <view class="title"><text style="color:red">*</text>影响因子：</view>
+  <input class="input" placeholder="请输入影响因子" bindinput="titleInput"></input>
+</view>
+<view class="addTitle">
+  <view class="title"><text style="color:red">*</text>发表年限：</view>
+  <picker class="addpicker" fields="month" mode="date" value="{{date}}" start="2010-09-01" end="2019-12-01" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+    <image class="gengduo" src="../../images/xia.png"></image>
+  </picker>
+</view>
