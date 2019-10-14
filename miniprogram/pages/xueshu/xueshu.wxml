@@ -13,18 +13,30 @@
 </view>
 <view class="addTitle">
   <view class="title"><text style="color:red">*</text>期刊名称：</view>
-  <input class="input" placeholder="请输入期刊名称" bindinput="titleInput"></input>
+  <input class="input" placeholder="请输入期刊名称" bindinput="nameInput"></input>
 </view>
 <view class="addTitle">
   <view class="title"><text style="color:red">*</text>影响因子：</view>
-  <input class="input" placeholder="请输入影响因子" bindinput="titleInput"></input>
+  <input class="input" placeholder="请输入影响因子" bindinput="cellInput"></input>
+</view>
+<view class="addTitle">
+  <view class="title"><text style="color:red">*</text>所在分区：</view>
+  <picker class="addpicker" bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+    <view class="picker">
+      {{array2[index2]}}
+    </view>
+    <image class="gengduo" src="../../images/xia.png"></image>
+  </picker>
 </view>
 <view class="addTitle">
   <view class="title"><text style="color:red">*</text>发表年限：</view>
-  <picker class="addpicker" fields="month" mode="date" value="{{date}}" start="2010-09-01" end="2019-12-01" bindchange="bindDateChange">
+  <picker class="addpicker" fields="month" mode="date" value="{{date}}" start="2010-09-01" end="{{todayTime}}" bindchange="bindDateChange">
     <view class="picker">
       {{date}}
     </view>
     <image class="gengduo" src="../../images/xia.png"></image>
   </picker>
 </view>
+<button class="addBtn" bindtap="addBtn">
+  点击提交
+</button>

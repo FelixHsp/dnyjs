@@ -52,3 +52,10 @@
   padding-left: 1.8em;
   position: relative;
 }
+.addBtn{
+  background: #3e62ad;
+  color: white;
+  width: 320px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}

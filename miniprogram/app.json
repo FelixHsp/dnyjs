@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/xueshu/xueshu",
     "pages/index/index",
+    "pages/xueshu/xueshu",
     "pages/mine/mine",
     "pages/user/user",
     "pages/jingsai/jingsai"
