@@ -28,6 +28,24 @@ Page({
       url: '../xueshu/xueshu'
     })
   },
+  gojingsai: function () {
+    // console.log(1)
+    wx.navigateTo({
+      url: '../jingsai/jingsai'
+    })
+  },
+  goZhuzuo: function () {
+    // console.log(1)
+    wx.navigateTo({
+      url: '../zhuzuo/zhuzuo'
+    })
+  },
+  goBiaozhang: function () {
+    // console.log(1)
+    wx.navigateTo({
+      url: '../biaozhang/biaozhang'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

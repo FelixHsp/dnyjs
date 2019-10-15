@@ -11,8 +11,18 @@
     <image src="../../images/lunwen.png" class="addImg"></image>
     <view class="text">添加学术论文</view>
   </view>
-  <view class="jingsaiAdd">
+  <view class="jingsaiAdd" bindtap="gojingsai">
   <image src="../../images/jingsai.png" class="addImg"></image>
     <view class="text">添加科研成果</view>
+  </view>
+</view>
+<view class="add">
+  <view class="xueshuAdd" bindtap="goZhuzuo">
+    <image src="../../images/zhuzuo.png" class="addImg"></image>
+    <view class="text">添加著作</view>
+  </view>
+  <view class="jingsaiAdd" bindtap="goBiaozhang">
+  <image src="../../images/bisai.png" class="addImg"></image>
+    <view class="text">添加竞赛或表彰</view>
   </view>
 </view>

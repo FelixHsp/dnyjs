@@ -1,23 +1,14 @@
-// pages/xueshu/xueshu.js
+// pages/biaozhang/biaozhang.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    array: ['专利','软件著作权'],
-    array2: ['发明专利', '外观专利', '新型专利'],
-    index: 0,
-    index2: 0,
     date: '2019-09',
-    todayDate: '',
-    todayDateTime: '',
-    todayTime: '',
-    formItem: {
-      type:'专利',
-      zhuanliType:'发明专利'
-    },
-    zhuanliisShow: true
+    formItem:{
+      data:'2019-09'
+    }
   },
 
   /**
@@ -39,43 +30,30 @@ Page({
       })
     })
   },
-  bindPickerChange: function (e) {
+  biaozhangInput: function (e) {
     this.setData({
-      index:e.detail.value,
-      ['formItem.type']:this.data.array[e.detail.value]
-    })
-    if(e.detail.value == 1){
-      this.setData({
-        zhuanliisShow: false,
-        ['formItem.zhuanliType']: '',
-        ['formItem.publicInput']: ''
-      })
-    }
-    if (e.detail.value == 0){
-      this.setData({
-        zhuanliisShow: true,
-        ['formItem.applyInput']: ''
-      })
-    }
-  },
-  bindPickerChange2:function(e){
-    this.setData({
-      index2: e.detail.value,
-      ['formItem.zhuanliType']:this.data.array2[e.detail.value]
+      ['formItem.title']: e.detail.value
     })
   },
-  publicInput:function(e){
+  contentInput: function (e) {
     this.setData({
-      ['formItem.publicInput']:e.detail.value
+      ['formItem.content']: e.detail.value
     })
   },
-  applyInput: function (e) {
+  danweiInput: function (e) {
     this.setData({
-      ['formItem.applyInput']: e.detail.value
+      ['formItem.danwei']: e.detail.value
     })
   },
-  addBtn: function () {
-    if ((!this.data.formItem.publicInput && this.data.zhuanliisShow)||(!this.data.formItem.applyInput && !this.data.zhuanliisShow)) {
+  bindDateChange: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+      date: e.detail.value,
+      ['formItem.date']: e.detail.value
+    })
+  },
+  addBtn:function(){
+    if (!this.data.formItem.title || !this.data.formItem.content || !this.data.formItem.danwei) {
       wx.showModal({
         title: '提示',
         content: '请将信息填写完整',
@@ -85,8 +63,8 @@ Page({
       wx.showModal({
         title: '确认',
         content: '是否确定提交',
-        success:(res)=>{
-          if(res.confirm){
+        success: (res) => {
+          if (res.confirm) {
             wx.cloud.callFunction({
               // 云函数名称
               name: 'time',

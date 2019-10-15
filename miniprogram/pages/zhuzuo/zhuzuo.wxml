@@ -1,0 +1,15 @@
+<view class="addTitle">
+    <view class="title"><text style="color:red">*</text>著作名称：</view>
+    <input class="input" placeholder="请输入著作名称" bindinput="zhuzuoInput"></input>
+</view>
+<view class="addTitle">
+    <view class="title"><text style="color:red">*</text>出版社：</view>
+    <input class="input" placeholder="请输入出版社" bindinput="chubanInput"></input>
+</view>
+<view class="addTitle">
+    <view class="title"><text style="color:red">*</text>ISBN号：</view>
+    <input class="input" placeholder="请输入ISBN号" bindinput="isbnInput"></input>
+</view>
+<button class="addBtn" bindtap="addBtn">
+  点击提交
+</button>
