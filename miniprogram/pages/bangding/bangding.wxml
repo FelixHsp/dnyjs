@@ -1,0 +1,30 @@
+<view class="wrapper">
+  <view class="auth">
+    <view wx:if="{{flag}}">
+      <view class="title">请输入学号加密码进行绑定</view>
+      <view class="describe">密码默认为身份证号生日的六位</view>
+      <view class="right"></view>
+      <view class="right2"></view>
+      <view class="top"></view>
+      <view class="ipt">
+        <input placeholder="请输入学号" bindinput="xuehao"></input>
+        <input placeholder="请输入密码" password="true" bindinput="mima"></input>
+      </view>
+      <button bindtap="bangding">点击绑定</button>
+    </view>
+    <view wx:if="{{!flag}}">
+      <view class="right"></view>
+      <view class="right2"></view>
+      <view class="top"></view>
+      <view class="title">您已绑定学号</view>
+      <view class="describe">下面是绑定信息，可点击解除绑定进行解绑</view>
+      <view class="ipt">
+        <input placeholder="{{s_name}}" disabled="true"></input>
+        <input placeholder="{{s_number}}" disabled="true"></input>
+        <input placeholder="{{s_xueyuan}}" disabled="true"></input>
+        <input placeholder="{{s_zhuanye}}" disabled="true"></input>
+      </view>
+      <button bindtap="delbangding">点击解除绑定</button>
+    </view>
+  </view>
+</view>

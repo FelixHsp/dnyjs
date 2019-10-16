@@ -14,7 +14,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goBangding:function(){
+    // console.log(1)
+    wx.navigateTo({
+      url: '../bangding/bangding',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
