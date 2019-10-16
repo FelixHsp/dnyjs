@@ -1,14 +1,20 @@
-// pages/biaozhang/biaozhang.js
+// pages/zhuzuo/zhuzuo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    formItem: {
+      type: '国家级成果奖励',
+      date: '2019-09',
+      weici: '1'
+    },
+    array: ['国家级成果奖励', '省（部）级成果奖励', '厅（局）级成果奖励'],
+    array2: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    index: 0,
+    index2: 0,
     date: '2019-09',
-    formItem:{
-      data:'2019-09'
-    }
   },
 
   /**
@@ -30,25 +36,32 @@ Page({
       })
     })
   },
-  biaozhangInput: function (e) {
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value,
+      ['formItem.type']: this.data.array[e.detail.value]
+    })
+  },
+  bindPickerChange2: function (e) {
+    this.setData({
+      index2: e.detail.value,
+      ['formItem.weici']: this.data.array2[e.detail.value]
+    })
+  },
+  zhuzuoInput: function (e) {
     this.setData({
       ['formItem.title']: e.detail.value
     })
   },
-  danweiInput: function (e) {
-    this.setData({
-      ['formItem.danwei']: e.detail.value
-    })
-  },
-  bindDateChange: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-      date: e.detail.value,
-      ['formItem.date']: e.detail.value
-    })
-  },
-  addBtn:function(){
-    if (!this.data.formItem.title || !this.data.formItem.danwei) {
+  addBtn: function () {
+    if (!this.data.formItem.title) {
       wx.showModal({
         title: '提示',
         content: '请将信息填写完整',
@@ -80,13 +93,6 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */

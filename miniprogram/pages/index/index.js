@@ -46,6 +46,18 @@ Page({
       url: '../biaozhang/biaozhang'
     })
   },
+  goXiangmu: function () {
+    // console.log(1)
+    wx.navigateTo({
+      url: '../xiangmu/xiangmu'
+    })
+  },
+  goKeyan: function () {
+    // console.log(1)
+    wx.navigateTo({
+      url: '../keyan/keyan'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

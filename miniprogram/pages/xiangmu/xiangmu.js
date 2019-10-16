@@ -1,14 +1,20 @@
-// pages/biaozhang/biaozhang.js
+// pages/zhuzuo/zhuzuo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    formItem: {
+      type: 'A类课题项目',
+      date:'2019-09',
+      weici:'1'
+    },
+    array: ['A类课题项目', 'B类课题项目', 'C类课题项目','D类课题项目'],
+    array2:['1','2','3','4','5','6','7','8','9','10'],
+    index: 0,
+    index2:0,
     date: '2019-09',
-    formItem:{
-      data:'2019-09'
-    }
   },
 
   /**
@@ -30,25 +36,42 @@ Page({
       })
     })
   },
-  biaozhangInput: function (e) {
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value,
+      ['formItem.type']: this.data.array[e.detail.value]
+    })
+  },
+  bindPickerChange2: function (e) {
+    this.setData({
+      index2: e.detail.value,
+      ['formItem.weici']: this.data.array2[e.detail.value]
+    })
+  },
+  zhuzuoInput: function (e) {
     this.setData({
       ['formItem.title']: e.detail.value
     })
   },
-  danweiInput: function (e) {
+  chubanInput: function (e) {
     this.setData({
-      ['formItem.danwei']: e.detail.value
+      ['formItem.name']: e.detail.value
     })
   },
-  bindDateChange: function (e) {
-    console.log(e.detail.value)
+  isbnInput: function (e) {
     this.setData({
-      date: e.detail.value,
-      ['formItem.date']: e.detail.value
+      ['formItem.number']: e.detail.value
     })
   },
-  addBtn:function(){
-    if (!this.data.formItem.title || !this.data.formItem.danwei) {
+  addBtn: function () {
+    if (!this.data.formItem.title || !this.data.formItem.name || !this.data.formItem.number) {
       wx.showModal({
         title: '提示',
         content: '请将信息填写完整',
@@ -80,13 +103,6 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */

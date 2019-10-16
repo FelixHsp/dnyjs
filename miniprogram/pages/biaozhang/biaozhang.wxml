@@ -1,17 +1,13 @@
 <view class="addTitle">
-    <view class="title"><text style="color:red">*</text>竞赛或奖励表彰名称：</view>
-    <input class="input" placeholder="请输入竞赛或奖励表彰名称：" bindinput="biaozhangInput"></input>
-</view>
-<view class="addTitle">
-    <view class="title"><text style="color:red">*</text>具体奖项或表彰内容：</view>
-    <input class="input" placeholder="请输入具体奖项或表彰内容" bindinput="contentInput"></input>
+    <view class="title"><text style="color:red">*</text>竞赛奖励或荣誉表彰名称：</view>
+    <input class="input" placeholder="请输入竞赛奖励或荣誉表彰名称" bindinput="biaozhangInput"></input>
 </view>
 <view class="addTitle">
     <view class="title"><text style="color:red">*</text>主办单位：</view>
     <input class="input" placeholder="请输入主办单位" bindinput="danweiInput"></input>
 </view>
 <view class="addTitle">
-  <view class="title"><text style="color:red">*</text>发表年限：</view>
+  <view class="title"><text style="color:red">*</text>奖励表彰日期：</view>
   <picker class="addpicker" fields="month" mode="date" value="{{date}}" start="2010-09-01" end="{{todayTime}}" bindchange="bindDateChange">
     <view class="picker">
       {{date}}

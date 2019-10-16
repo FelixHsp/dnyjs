@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    formItem:{}
+    formItem:{
+      type:'专著'
+    },
+    array:['专著','编著'],
+    index:0
   },
 
   /**
@@ -20,6 +24,12 @@ Page({
    */
   onReady: function () {
 
+  },
+  bindPickerChange:function(e){
+    this.setData({
+      index:e.detail.value,
+      ['formItem.type']:this.data.array[e.detail.value]
+    })
   },
   zhuzuoInput:function(e){
     this.setData({

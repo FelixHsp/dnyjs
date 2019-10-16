@@ -1,2 +1,44 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class='top-img'>
+  <view class='top-content'>
+    <view class='user-avatar'>
+      <open-data type="userAvatarUrl" class="top-img"></open-data>
+    </view>
+    <view class='user-name'>
+      <open-data type="userNickName" class="top-user"></open-data>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='pay' bindtap=''>
+      <image src='../../images/lunwen.png' class='img-bill'></image>
+      绑定信息
+    </view>
+    <view class='record' bindtap=''>
+      <image src='../../images/lunwen.png' class='img-record'></image>
+      查看当前学术论文
+    </view>
+    <view class='wallet' bindtap=''>
+      <image src='../../images/jingsai.png' class='img-wallet'></image>
+      查看当前知识产权成果
+    </view>
+    <view class='wallet' bindtap=''>
+      <image src='../../images/zhuzuo.png' class='img-wallet'></image>
+      查看当前著作
+    </view>
+    <view class='wallet' bindtap=''>
+      <image src='../../images/bisai.png' class='img-wallet'></image>
+      查看竞赛奖励或荣誉表彰
+    </view>
+    <view class='wallet' bindtap=''>
+      <image src='../../images/keyan.png' class='img-wallet'></image>
+      查看当前科研项目
+    </view>
+    <view class='wallet' bindtap=''>
+      <image src='../../images/keyan2.png' class='img-wallet'></image>
+      查看当前科研成果
+    </view>
+    <view class='about'>
+      <image src='../../images/lunwen.png' class='img-about'></image>
+      <button class='button' open-type="feedback">意见反馈</button>
+    </view>
+  </view>
+</view>

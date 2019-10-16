@@ -3,6 +3,15 @@
     <input class="input" placeholder="请输入著作名称" bindinput="zhuzuoInput"></input>
 </view>
 <view class="addTitle">
+  <view class="title"><text style="color:red">*</text>著作类别：</view>
+  <picker class="addpicker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+    <image class="gengduo" src="../../images/xia.png"></image>
+  </picker>
+</view>
+<view class="addTitle">
     <view class="title"><text style="color:red">*</text>出版社：</view>
     <input class="input" placeholder="请输入出版社" bindinput="chubanInput"></input>
 </view>

@@ -24,8 +24,8 @@
 </view>
 <view wx:if="{{!zhuanliisShow}}">
   <view class="addTitle">
-    <view class="title"><text style="color:red">*</text>申请号：</view>
-    <input class="input" placeholder="请输入申请号" bindinput="applyInput"></input>
+    <view class="title"><text style="color:red">*</text>登记号：</view>
+    <input class="input" placeholder="请输入登记号" bindinput="applyInput"></input>
   </view>
 </view>
 <button class="addBtn" bindtap="addBtn">
