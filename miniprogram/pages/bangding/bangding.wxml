@@ -2,7 +2,7 @@
   <view class="auth">
     <view wx:if="{{flag}}">
       <view class="title">请输入学号加密码进行绑定</view>
-      <view class="describe">密码默认为身份证号生日的六位</view>
+      <view class="describe">密码默认为身份证号生日的八位</view>
       <view class="right"></view>
       <view class="right2"></view>
       <view class="top"></view>

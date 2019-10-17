@@ -111,21 +111,41 @@ Page({
                     showCancel: false
                   })
                 } else if (res.data.data == true){
-                  wx.showModal({
-                    title: '提示',
-                    content: '绑定成功',
-                    showCancel: false,
-                    success:(res)=>{
-                      if(res.confirm){
-                        wx.redirectTo({
-                          url: '../bangding/bangding',
+                  wx.request({
+                    url: 'http://localhost/neauyjs/students/getstudent',
+                    data: {
+                      "number": this.data.number
+                    },
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded'
+                    },
+                    method: "POST",
+                    success: (res) => {
+                      console.log(res.data.data[0].s_openid)
+                      if(res.data.data[0].s_openid == this.data.openId){
+                        wx.showModal({
+                          title: '提示',
+                          content: '绑定成功',
+                          showCancel: false,
+                          success: (res) => {
+                            if (res.confirm) {
+                              wx.redirectTo({
+                                url: '../bangding/bangding',
+                              })
+                            }
+                          }
+                        })
+                        wx.setStorage({
+                          key: 'number',
+                          data: this.data.number
+                        })
+                      }else{
+                        wx.showModal({
+                          title: '提示',
+                          content: '该学号已被其他人绑定，可以通过意见反馈联系我们',
                         })
                       }
                     }
-                  })
-                  wx.setStorage({
-                    key: 'number',
-                    data: this.data.number
                   })
                 }
               }

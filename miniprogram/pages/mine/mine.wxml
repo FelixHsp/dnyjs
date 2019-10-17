@@ -6,7 +6,7 @@
     <view class='user-name'>
       <open-data type="userNickName" class="top-user"></open-data>
     </view>
-    <view class="user-name">未绑定</view>
+    <view class="user-name">{{number}}</view>
   </view>
   <view class='list'>
     <view class='pay' bindtap='goBangding'>

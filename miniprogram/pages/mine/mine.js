@@ -5,14 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    number:'未绑定'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getStorage({
+      key: 'number',
+      success: (res) => {
+        this.setData({
+          number: res.data
+        })
+      }
+    })
   },
   goBangding:function(){
     // console.log(1)
@@ -31,7 +38,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.getStorage({
+      key: 'number',
+      success: (res) => {
+        this.setData({
+          number: res.data
+        })
+      }
+    })
   },
 
   /**
