@@ -19,6 +19,6 @@
     <view class="title"><text style="color:red">*</text>ISBN号：</view>
     <input class="input" placeholder="请输入ISBN号" bindinput="isbnInput"></input>
 </view>
-<button class="addBtn" bindtap="addBtn">
+<button class="addBtn" bindtap="addBtn" disabled="{{disable}}">
   点击提交
 </button>

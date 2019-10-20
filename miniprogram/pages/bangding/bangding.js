@@ -35,7 +35,7 @@ Page({
           flag:false
         })
         wx.request({
-          url: 'http://localhost/neauyjs/students/getstudent',
+          url: 'https://www.felixlg.work/neauyjs/students/getstudent',
           data: {
             "number": res.data
           },
@@ -86,7 +86,7 @@ Page({
         success:(res)=>{
           if(res.confirm){
             wx.request({
-              url: 'http://localhost/neauyjs/students/addopenid',
+              url: 'https://www.felixlg.work/neauyjs/students/addopenid',
               data: {
                 "number": this.data.number,
                 "pass": this.data.pass,
@@ -112,7 +112,7 @@ Page({
                   })
                 } else if (res.data.data == true){
                   wx.request({
-                    url: 'http://localhost/neauyjs/students/getstudent',
+                    url: 'https://www.felixlg.work/neauyjs/students/getstudent',
                     data: {
                       "number": this.data.number
                     },
@@ -162,7 +162,7 @@ Page({
       success:(res)=>{
         if(res.confirm){
           wx.request({
-            url: 'http://localhost/neauyjs/students/delopenid',
+            url: 'https://www.felixlg.work/neauyjs/students/delopenid',
             data: {
               "number": this.data.s_number
             },

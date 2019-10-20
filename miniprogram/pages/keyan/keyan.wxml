@@ -29,6 +29,6 @@
     <image class="gengduo" src="../../images/xia.png"></image>
   </picker>
 </view>
-<button class="addBtn" bindtap="addBtn">
+<button class="addBtn" bindtap="addBtn" disabled="{{disable}}">
   点击提交
 </button>

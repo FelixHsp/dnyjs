@@ -27,6 +27,11 @@ Page({
         this.setData({
           goFlag: true
         })
+      },
+      fail: () => {
+        this.setData({
+          goFlag: false
+        })
       }
     })
   },
@@ -125,7 +130,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    wx.getStorage({
+      key: 'number',
+      success: (res) => {
+        this.setData({
+          goFlag: true
+        })
+      },
+      fail: () => {
+        this.setData({
+          goFlag: false
+        })
+      }
+    })
   },
 
   /**

@@ -20,6 +20,7 @@ Page({
     },
     jcrisShow:true,
     cellShow:true,
+    disable:false
   },
 
   /**
@@ -113,7 +114,8 @@ Page({
               key: 'number',
               success: (res) => {
                 this.setData({
-                  ['formItem.s_number']:res.data
+                  ['formItem.s_number']:res.data,
+                  disable:true
                 })
                 wx.cloud.callFunction({
                   // 云函数名称
@@ -129,6 +131,35 @@ Page({
                     ['formItem.infodate']: JSON.parse(res.result).sysTime2,
                   })
                   console.log(this.data.formItem)
+                  wx.request({
+                    url: 'https://www.felixlg.work/neauyjs/students/addxueshu',
+                    data: {
+                      "type": this.data.formItem.type,
+                      "name": this.data.formItem.name,
+                      "title": this.data.formItem.title,
+                      "cell": this.data.formItem.cell,
+                      "jcr": this.data.formItem.jcr,
+                      "date": this.data.formItem.date,
+                      "infodate": this.data.formItem.infodate,
+                      "s_number": this.data.formItem.s_number,
+                    },
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded'
+                    },
+                    method: "POST",
+                    success: (res) => {
+                      wx.showToast({
+                        title: '提交成功',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                      setTimeout(()=>{
+                        wx.navigateBack({
+                          
+                        })
+                      },2000)
+                    }
+                  })
                 })
               }
             })

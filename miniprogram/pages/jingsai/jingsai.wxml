@@ -28,6 +28,6 @@
     <input class="input" placeholder="请输入登记号" bindinput="applyInput"></input>
   </view>
 </view>
-<button class="addBtn" bindtap="addBtn">
+<button class="addBtn" bindtap="addBtn" disabled="{{disable}}">
   点击提交
 </button>
