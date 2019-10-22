@@ -1,6 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/detail5/detail5",
+    "pages/detail4/detail4",
+    "pages/detail3/detail3",
+    "pages/detail2/detail2",
+    "pages/detail1/detail1",
+    "pages/detail/detail",
     "pages/mine/mine",
     "pages/bangding/bangding",
     "pages/jingsai/jingsai",

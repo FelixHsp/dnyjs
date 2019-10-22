@@ -13,27 +13,27 @@
       <image src='../../images/bangding.png' class='img-bill'></image>
       绑定信息
     </view>
-    <view class='record' bindtap=''>
+    <view class='record' bindtap='goXueshu'>
       <image src='../../images/lunwen2.png' class='img-record'></image>
       查看当前学术论文
     </view>
-    <view class='wallet' bindtap=''>
+    <view class='wallet' bindtap='goZhishi'>
       <image src='../../images/jingsai2.png' class='img-wallet'></image>
       查看当前知识产权成果
     </view>
-    <view class='wallet' bindtap=''>
+    <view class='wallet' bindtap='goZhuzuo'>
       <image src='../../images/zhuzuo2.png' class='img-wallet'></image>
       查看当前著作
     </view>
-    <view class='wallet' bindtap=''>
+    <view class='wallet' bindtap='goBiaozhang'>
       <image src='../../images/bisai2.png' class='img-wallet'></image>
       查看竞赛奖励或荣誉表彰
     </view>
-    <view class='wallet' bindtap=''>
+    <view class='wallet' bindtap='goKeyan'>
       <image src='../../images/keyan3.png' class='img-wallet'></image>
       查看当前科研项目
     </view>
-    <view class='wallet' bindtap=''>
+    <view class='wallet' bindtap='goChengguo'>
       <image src='../../images/keyan4.png' class='img-wallet'></image>
       查看当前科研成果
     </view>

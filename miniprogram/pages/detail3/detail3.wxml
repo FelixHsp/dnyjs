@@ -1,0 +1,34 @@
+<!-- 下拉菜单   -->
+<view id="swiper-tab">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="tabNav">{{thirds}}
+      <i></i>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" duration="1000" class="swiper-item" style='display:{{displays}}'>
+    <swiper-item>
+      <view class="location_bottom" hidden="">
+        <view class="{{_res == 1?'add_House':'add_city'}}" data-num="1" bindtap="clickHouse" data-name="审核通过">审核通过</view>
+        <view class="{{_res == 2?'add_House':'add_city'}}" data-num="2" bindtap="clickHouse" data-name="审核未通过">审核未通过</view>
+        <view class="{{_res == 3?'add_House':'add_city'}}" data-num="3" bindtap="clickHouse" data-name="待审核">待审核</view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="swiper-beijing" bindtap="hideNav" style='display:{{displays}}'></view>
+<view id="infoList" wx:for="{{form}}" wx:for-index="{{did}}" wx:for-item="itemName" wx:key="{{itemName}}" data-id="{{itemName}}">
+  <view>
+    {{itemName.b_title}}
+  </view>
+  <view id="date">
+    {{itemName.b_infodate}}
+  </view>
+  <view>
+    {{itemName.b_danwei}}
+  </view>
+  <view>
+    {{itemName.b_date}}
+  </view>
+  <view id="del" bindtap="delTap" data-id="{{itemName}}">
+  </view>
+</view>

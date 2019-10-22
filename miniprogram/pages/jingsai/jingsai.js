@@ -72,11 +72,11 @@ Page({
   },
   applyInput: function (e) {
     this.setData({
-      ['formItem.applyInput']: e.detail.value
+      ['formItem.publicInput']: e.detail.value
     })
   },
   addBtn: function () {
-    if ((!this.data.formItem.publicInput && this.data.zhuanliisShow)||(!this.data.formItem.applyInput && !this.data.zhuanliisShow)) {
+    if ((!this.data.formItem.publicInput && this.data.zhuanliisShow)||(!this.data.formItem.publicInput && !this.data.zhuanliisShow)) {
       wx.showModal({
         title: '提示',
         content: '请将信息填写完整',
