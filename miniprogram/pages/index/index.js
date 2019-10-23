@@ -15,6 +15,7 @@ Page({
     interval: 5000,      // 自动切换时间间隔
     duration: 1000,      // 滑动动画时长,
     goFlag:false,
+    s_number:''
   },
 
   /**
@@ -25,7 +26,40 @@ Page({
       key: 'number',
       success: (res) => {
         this.setData({
-          goFlag: true
+          goFlag: true,
+          s_number:res.data
+        })
+        wx.cloud.callFunction({
+          name: 'login',
+          data: {},
+          success: res => {
+            this.setData({
+              openId: res.result.openid
+            })
+            wx.request({
+              url: 'https://www.felixlg.work/neauyjs/students/getstudent',
+              data: {
+                "number": this.data.s_number
+              },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: "POST",
+              success: (res) => {
+                // console.log(res.data.data[0].s_openid == this.data.openId)
+                if (res.data.data[0].s_openid != this.data.openId) {
+                  wx.removeStorage({
+                    key: 'number',
+                    success:(res) => {
+                      this.setData({
+                        goFlag: false
+                      })
+                    }
+                  })
+                }
+              }
+            })
+          }
         })
       },
       fail: () => {

@@ -18,6 +18,11 @@ Page({
         this.setData({
           number: res.data
         })
+      },
+      fail:()=>{
+        this.setData({
+          number: '未绑定'
+        })
       }
     })
   },
