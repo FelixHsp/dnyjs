@@ -52,9 +52,15 @@ Page({
                 },
                 method: "POST",
                 success: (res) => {
-                  this.setData({
-                    form: res.data.data
-                  })
+                  if (!res.data.data) {
+                    this.setData({
+                      form: []
+                    })
+                  } else {
+                    this.setData({
+                      form: res.data.data
+                    })
+                  }
                 }
               })
             }
@@ -137,10 +143,20 @@ Page({
       },
       method: "POST",
       success: (res) => {
+        if (!res.data.data) {
+          this.setData({
+            form: []
+          })
+        } else {
+          this.setData({
+            form: res.data.data
+          })
+        }
+      },
+      fail:()=>{
         this.setData({
-          form: res.data.data
+          form:[]
         })
-        console.log(this.data.form)
       }
     })
   }
